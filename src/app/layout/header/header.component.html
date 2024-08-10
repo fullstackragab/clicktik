@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="group">
+    <div class="brand">
+      <img src="images/Logomark.png" />
+      <div>ClickTik</div>
+    </div>
+    <div class="menu">
+      <div routerLink="/">Home</div>
+    </div>
+  </div>
+  <div class="group">
+    @if (user) {
+    <div class="search">
+      <input type="search" />
+    </div>
+
+    }
+    <div class="account">
+      @if (user) {
+      <div class="user">
+        {{ user.firstName }}
+      </div>
+      } @else {
+      <div class="login" routerLink="/login">Login</div>
+      }
+    </div>
+  </div>
+</div>

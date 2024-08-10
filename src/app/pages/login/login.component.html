@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <img src="images/Logomark.png" class="logo" />
+  <div class="title">Log in to your account</div>
+  <div class="subtitle">Welcome back! Please enter your details.</div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input #email id="email" type="text" />
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input #password id="password" type="password" />
+  </div>
+  <div class="button" (click)="onLogin(email.value, password.value)">
+    Sign In
+  </div>
+</div>

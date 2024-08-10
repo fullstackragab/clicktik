@@ -1,0 +1,44 @@
+.wrapper {
+  height: 80px;
+  background-color: white;
+  color: black;
+  display: flex;
+  padding: 24px 112px;
+  justify-content: space-between;
+  align-items: center;
+}
+.group {
+  display: flex;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.brand img {
+  width: 32px;
+  height: 32px;
+}
+
+.menu {
+  display: flex;
+  padding-left: 100px;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
+}
+.menu:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.login {
+  display: flex;
+  padding-left: 100px;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
+}
+.account {
+  display: flex;
+  align-items: center;
+}
