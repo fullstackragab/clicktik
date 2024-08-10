@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="group">
+  <div class="brand-group">
     <div class="brand">
       <img src="images/Logomark.png" />
       <div>ClickTik</div>
@@ -8,12 +8,15 @@
       <div routerLink="/">Home</div>
     </div>
   </div>
-  <div class="group">
+  <div class="account-group">
     @if (user) {
     <div class="search">
-      <input type="search" />
+      <app-search></app-search>
     </div>
 
+    <div class="cart">
+      <app-cart-badge></app-cart-badge>
+    </div>
     }
     <div class="account">
       @if (user) {

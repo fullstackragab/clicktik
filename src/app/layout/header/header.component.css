@@ -7,9 +7,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.group {
+.brand-group {
   display: flex;
   align-items: center;
+}
+.account-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 .brand {
   display: flex;

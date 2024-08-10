@@ -13,4 +13,7 @@
   <div class="button" (click)="onLogin(email.value, password.value)">
     Sign In
   </div>
+  @if (error) {
+  <div class="error">Error logging in, please fix the error and try again!</div>
+  }
 </div>

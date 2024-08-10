@@ -10,14 +10,23 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  error = false;
+
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router
   ) {}
 
   onLogin(email: string, password: string) {
-    this.authService.login(email, password).subscribe((user: any) => {
-      if (user) this.router.navigateByUrl('/');
+    this.error = false;
+    this.authService.login(email, password).subscribe({
+      next: (user: any) => {
+        if (user) this.router.navigateByUrl('/');
+        else this.error = true;
+      },
+      error: (e: any) => {
+        this.error = true;
+      },
     });
   }
 }

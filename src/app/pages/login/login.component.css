@@ -54,3 +54,13 @@
 .button:hover {
   filter: brightness(1.05);
 }
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: red;
+  margin-top: 40px;
+  font-size: small;
+}

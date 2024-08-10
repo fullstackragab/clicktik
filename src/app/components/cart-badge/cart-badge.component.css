@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.count {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 10px;
+  background-color: #41cccc;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+.total {
+  position: absolute;
+  font-size: 12px;
+  bottom: -10px;
+}
