@@ -20,10 +20,12 @@
   display: flex;
   gap: 4px;
   align-items: center;
+  cursor: pointer;
 }
 .brand img {
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 
 .menu {

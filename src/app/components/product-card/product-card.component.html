@@ -1,1 +1,32 @@
-<p>product-card works!</p>
+<div class="wrapper">
+  <img [src]="product.thumbnail" alt="" class="image" />
+  <div class="content">
+    <div class="title">{{ product.title }}</div>
+    <div class="description">{{ product.description | truncate : 60 }}</div>
+    @if (product.discountPercentage > 0) {
+    <div class="price-group">
+      <div class="old-price">
+        <strong>{{ product.price }}</strong> USD
+      </div>
+      <div class="new-price">
+        <strong>{{ calcNewPrice() }}</strong> USD
+      </div>
+    </div>
+    } @else {
+    <div class="price">{{ product.price }} USD</div>
+    }
+    <div class="brand">
+      Brand: <strong>{{ product.brand }}</strong>
+    </div>
+    <div class="category">
+      Category: <strong>{{ product.category }}</strong>
+    </div>
+    <div class="in-stock">
+      In stock: <strong>{{ product.stock }}</strong>
+    </div>
+    <div class="rating">
+      <app-rating></app-rating>
+    </div>
+  </div>
+  <div class="button" (click)="onAddProductToCart()">Add To Cart</div>
+</div>

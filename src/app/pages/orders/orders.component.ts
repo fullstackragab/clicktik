@@ -25,8 +25,11 @@ export class OrdersComponent implements OnInit {
   getProducts() {
     this.productsService
       .getProducts(this.limit, this.skip)
-      .subscribe((products: any) => {
-        this.products = products;
+      .subscribe((response: any) => {
+        this.limit = response.limit;
+        this.skip = response.skip;
+        this.total = response.total;
+        this.products = response.products;
       });
   }
 }
