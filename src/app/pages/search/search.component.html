@@ -10,12 +10,14 @@
         <app-product-card [product]="product"></app-product-card>
         }
       </div>
+      @if (!category) {
       <app-paginator
         (paginate)="onPaginate($event)"
         [limit]="limit"
         [skip]="skip"
         [total]="total"
-      ></app-paginator>
+      ></app-paginator
+      >}
     </div>
   </div>
 </div>

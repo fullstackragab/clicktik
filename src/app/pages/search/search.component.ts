@@ -4,9 +4,9 @@ import { ProductsService } from '../../services/products.service';
 import { PaginatorComponent } from '../../components/paginator/paginator.component';
 import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb.component';
 import { CategoriesComponent } from '../../components/categories/categories.component';
-import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs';
 import { SearchService } from '../../services/search.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-search',
@@ -25,17 +25,21 @@ export class SearchComponent implements OnInit {
   skip = 0;
   total = 0;
   q: string = '';
+  category: string = '';
   products: any[] = [];
 
   constructor(
     private readonly productsService: ProductsService,
-    private readonly searchService: SearchService
+    private readonly searchService: SearchService,
+    private readonly filterService: FilterService
   ) {}
 
   ngOnInit(): void {
-    debugger;
+    this.filterService.filter.subscribe((category) => {
+      this.category = category;
+      this.getProductsByCategory();
+    });
     this.searchService.term.subscribe((q: any) => {
-      debugger;
       this.q = q;
       this.searchProducts();
     });
@@ -47,6 +51,17 @@ export class SearchComponent implements OnInit {
       .pipe(first())
       .subscribe((response: any) => {
         this.limit = response.limit;
+        this.skip = response.skip;
+        this.total = response.total;
+        this.products = response.products;
+      });
+  }
+
+  getProductsByCategory() {
+    this.productsService
+      .getProductsByCategory(this.category)
+      .subscribe((response: any) => {
+        //this.limit = response.limit;
         this.skip = response.skip;
         this.total = response.total;
         this.products = response.products;

@@ -9,6 +9,7 @@
           [id]="'cat-' + $index"
           [value]="category"
           formControlName="category"
+          (change)="onChange()"
         />
         <label [for]="'cat-' + $index">{{ category }}</label>
       </div>

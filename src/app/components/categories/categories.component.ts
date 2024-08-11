@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../../services/categories.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-categories',
@@ -16,6 +17,7 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     private readonly categoriesService: CategoriesService,
+    private readonly filterService: FilterService,
     private readonly fb: FormBuilder
   ) {}
 
@@ -26,5 +28,9 @@ export class CategoriesComponent implements OnInit {
     this.categoriesService
       .getCategories()
       .subscribe((categories: any) => (this.categories = categories));
+  }
+
+  onChange() {
+    this.filterService.filter.next(this.form.value.category);
   }
 }

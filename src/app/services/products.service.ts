@@ -24,4 +24,8 @@ export class ProductsService {
       },
     });
   }
+
+  getProductsByCategory(category: string) {
+    return this.http.get(environment.apiUrl + 'products/category/' + category);
+  }
 }
