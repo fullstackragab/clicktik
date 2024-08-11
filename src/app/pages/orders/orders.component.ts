@@ -2,11 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { ProductsService } from '../../services/products.service';
 import { PaginatorComponent } from '../../components/paginator/paginator.component';
+import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb.component';
+import { CategoriesComponent } from '../../components/categories/categories.component';
 
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [ProductCardComponent, PaginatorComponent],
+  imports: [
+    ProductCardComponent,
+    PaginatorComponent,
+    BreadcrumbComponent,
+    CategoriesComponent,
+  ],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css',
 })

@@ -30,4 +30,18 @@ export class AuthService {
     this.user.next(undefined);
     sessionStorage.removeItem('USER');
   }
+
+  refreshToken(token: string) {
+    return this.http.post(
+      environment.apiUrl + 'auth/refresh',
+      {
+        refreshToken: token,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+  }
 }

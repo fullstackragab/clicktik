@@ -1,9 +1,18 @@
 .wrapper {
+  padding: 80px 114px;
 }
 .products {
-  width: 70%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: auto;
+  grid-template-columns: repeat(3, auto);
+  gap: 24px;
+  justify-content: start;
+}
+.title {
+  font-size: 30px;
+  margin-bottom: 29px;
+}
+.container {
+  margin-top: 50px;
+  display: flex;
+  gap: 24px;
 }

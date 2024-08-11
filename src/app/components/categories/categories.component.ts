@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../../services/categories.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css',
 })
 export class CategoriesComponent implements OnInit {
-  categories: string[] = [];
+  categories: any[] = [];
 
-  constructor(private readonly categoriesService: CategoriesService) {}
+  form!: FormGroup;
+
+  constructor(
+    private readonly categoriesService: CategoriesService,
+    private readonly fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      category: this.fb.control(''),
+    });
     this.categoriesService
       .getCategories()
       .subscribe((categories: any) => (this.categories = categories));

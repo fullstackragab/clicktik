@@ -1,8 +1,14 @@
 <div class="wrapper">
-  <div class="products">
-    @for (product of products; track product.id) {
-    <app-product-card [product]="product"></app-product-card>
-    }
+  <div class="title">Products</div>
+  <app-breadcrumb></app-breadcrumb>
+
+  <div class="container">
+    <app-categories></app-categories>
+    <div class="products">
+      @for (product of products; track product.id) {
+      <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
   </div>
   <app-paginator [limit]="limit" [skip]="skip" [total]="total"></app-paginator>
 </div>

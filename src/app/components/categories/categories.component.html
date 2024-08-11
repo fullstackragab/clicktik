@@ -1,1 +1,18 @@
-<p>categories works!</p>
+<div class="wrapper">
+  <div class="title">Products</div>
+  <form [formGroup]="form">
+    <div class="fields">
+      @for (category of categories; track $index) {
+      <div class="field">
+        <input
+          type="radio"
+          [id]="'cat-' + $index"
+          [value]="category"
+          formControlName="category"
+        />
+        <label [for]="'cat-' + $index">{{ category }}</label>
+      </div>
+      }
+    </div>
+  </form>
+</div>
