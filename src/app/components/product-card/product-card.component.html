@@ -24,9 +24,11 @@
     <div class="in-stock">
       In stock: <strong>{{ product.stock }}</strong>
     </div>
-    <div class="rating">
-      <app-rating></app-rating>
-    </div>
+    <app-rating
+      class="rating"
+      [rating]="product.rating"
+      [reviews]="product.reviews.length"
+    ></app-rating>
   </div>
   <div class="button" (click)="onAddProductToCart()">Add To Cart</div>
 </div>

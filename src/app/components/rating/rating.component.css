@@ -1,0 +1,13 @@
+.wrapper {
+  cursor: default;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.rating {
+  color: #f4b000;
+}
+.reviews {
+  color: rgba(0, 0, 0, 0.6);
+}

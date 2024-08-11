@@ -18,9 +18,9 @@ import { CategoriesComponent } from '../../components/categories/categories.comp
   styleUrl: './orders.component.css',
 })
 export class OrdersComponent implements OnInit {
-  limit = 3;
-  skip = 1;
-  total = 10;
+  limit = 9;
+  skip = 0;
+  total = 0;
   products: any[] = [];
 
   constructor(private readonly productsService: ProductsService) {}

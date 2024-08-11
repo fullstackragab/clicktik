@@ -1,5 +1,5 @@
 <div class="wrapper">
-  @if (skip <= limit) {
+  @if (_skip <= _limit) {
   <img class="previous disabled" src="images/Left.png" />
   } @else {
   <img class="previous" (click)="onPrevious()" src="images/Left.png" />
@@ -8,14 +8,14 @@
     @for (page of pages; track $index) {
     <div
       class="page"
-      [ngClass]="{ active: currentPage == $index }"
+      [ngClass]="{ active: currentPage == $index + 1 }"
       (click)="onPage($index)"
     >
       {{ $index + 1 }}
     </div>
     }
   </div>
-  @if ((skip * limit) + limit > total) {
+  @if ((_skip * _limit) + _limit > total) {
   <img class="next disabled" src="images/Left.png" />
   } @else {
   <img src="images/Left.png" class="next" (click)="onNext()" />
