@@ -18,9 +18,9 @@ import { CategoriesComponent } from '../../components/categories/categories.comp
   styleUrl: './orders.component.css',
 })
 export class OrdersComponent implements OnInit {
-  limit = 10;
-  skip = 0;
-  total = 0;
+  limit = 3;
+  skip = 1;
+  total = 10;
   products: any[] = [];
 
   constructor(private readonly productsService: ProductsService) {}
@@ -38,5 +38,10 @@ export class OrdersComponent implements OnInit {
         this.total = response.total;
         this.products = response.products;
       });
+  }
+
+  onPaginate(page: number) {
+    this.skip = this.limit * page;
+    this.getProducts();
   }
 }

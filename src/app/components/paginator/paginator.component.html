@@ -1,1 +1,23 @@
-<p>paginator works!</p>
+<div class="wrapper">
+  @if (skip <= limit) {
+  <img class="previous disabled" src="images/Left.png" />
+  } @else {
+  <img class="previous" (click)="onPrevious()" src="images/Left.png" />
+  }
+  <div class="pages">
+    @for (page of pages; track $index) {
+    <div
+      class="page"
+      [ngClass]="{ active: currentPage == $index }"
+      (click)="onPage($index)"
+    >
+      {{ $index + 1 }}
+    </div>
+    }
+  </div>
+  @if ((skip * limit) + limit > total) {
+  <img class="next disabled" src="images/Left.png" />
+  } @else {
+  <img src="images/Left.png" class="next" (click)="onNext()" />
+  }
+</div>

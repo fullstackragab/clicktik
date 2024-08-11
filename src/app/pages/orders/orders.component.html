@@ -10,5 +10,10 @@
       }
     </div>
   </div>
-  <app-paginator [limit]="limit" [skip]="skip" [total]="total"></app-paginator>
+  <app-paginator
+    (paginate)="onPaginate($event)"
+    [limit]="limit"
+    [skip]="skip"
+    [total]="total"
+  ></app-paginator>
 </div>
