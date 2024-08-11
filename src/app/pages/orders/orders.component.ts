@@ -33,7 +33,7 @@ export class OrdersComponent implements OnInit {
     this.productsService
       .getProducts(this.limit, this.skip)
       .subscribe((response: any) => {
-        this.limit = response.limit;
+        //this.limit = response.limit;
         this.skip = response.skip;
         this.total = response.total;
         this.products = response.products;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CartBadgeComponent } from '../../components/cart-badge/cart-badge.component';
-import { SearchComponent } from '../../pages/search/search.component';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-header',

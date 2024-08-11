@@ -15,7 +15,7 @@
     </div>
     }
   </div>
-  @if ((_skip * _limit) + _limit > total) {
+  @if (_skip + _limit > _total) {
   <img class="next disabled" src="images/Left.png" />
   } @else {
   <img src="images/Left.png" class="next" (click)="onNext()" />

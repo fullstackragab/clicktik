@@ -1,4 +1,21 @@
 <div class="wrapper">
-  <input type="search" />
-  <img src="images/Search.png" class="icon" />
+  <div class="title">Products</div>
+  <app-breadcrumb></app-breadcrumb>
+
+  <div class="container">
+    <app-categories></app-categories>
+    <div class="products-wrapper">
+      <div class="products">
+        @for (product of products; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+        }
+      </div>
+      <app-paginator
+        (paginate)="onPaginate($event)"
+        [limit]="limit"
+        [skip]="skip"
+        [total]="total"
+      ></app-paginator>
+    </div>
+  </div>
 </div>

@@ -16,4 +16,12 @@ export class ProductsService {
       },
     });
   }
+
+  searchProducts(q: string) {
+    return this.http.get(environment.apiUrl + 'products/search', {
+      params: {
+        q,
+      },
+    });
+  }
 }
